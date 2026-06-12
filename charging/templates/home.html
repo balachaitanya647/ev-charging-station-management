@@ -1,0 +1,44 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>EV Charging Station</title>
+
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>⚡ EV Charging Station Management System ⚡</h1>
+
+<a href="/book" class="btn">⚡ Book Charging Slot ⚡</a>
+
+<br><br>
+
+<table border="1">
+
+<tr>
+    <th>Station Name</th>
+    <th>Location</th>
+    <th>Available Slots</th>
+    <th>Rate (₹/kWh)</th>
+</tr>
+
+{% for station in stations %}
+<tr>
+    <td>{{ station.name }}</td>
+    <td>{{ station.location }}</td>
+    <td>{{ station.slots }}</td>
+    <td>{{ station.rate }}</td>
+</tr>
+{% endfor %}
+
+</table>
+
+</div>
+
+</body>
+</html>

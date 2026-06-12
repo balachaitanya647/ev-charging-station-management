@@ -1,0 +1,27 @@
+{% load static %}
+<link rel="stylesheet" href="{% static 'style.css' %}">
+<div class="container">
+<h2>Booking History</h2>
+
+<table border="1">
+
+<tr>
+<th>Name</th>
+<th>Station</th>
+<th>Units</th>
+<th>Cost</th>
+</tr>
+
+{% for booking in bookings %}
+
+<tr>
+<td>{{ booking.customer_name }}</td>
+<td>{{ booking.station }}</td>
+<td>{{ booking.units }}</td>
+<td>{{ booking.total_cost }}</td>
+</tr>
+
+{% endfor %}
+
+</table>
+</div>
